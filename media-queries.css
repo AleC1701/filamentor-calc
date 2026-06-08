@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+@media (min-width: 768px) {
+
+    header {
+    background-image: linear-gradient(to bottom, rgb(5, 128, 139),  #000b0c);  
+    }
+      main {
+   
+        background-image: linear-gradient(to top, rgb(9, 27, 29), rgb(2, 2, 2));
+    }
+
+    .imagem {
+           
+            animation: flutuar 3s ease-in-out infinite alternate;
+            margin-top: 20px;
+            margin-right: 30px;
+            
+        }
+
+
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+
+    header {
+     background-image: linear-gradient(to bottom, rgb(5, 128, 139),  #000b0c);  
+    }
+
+    main {
+   
+    background-image: linear-gradient(to top, rgb(23, 177, 194), rgb(2, 2, 2));
+    }
+}

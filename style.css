@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+body {
+    background-color: #000b0c;
+    height: 100vh;
+
+}
+header {
+    background-image: linear-gradient(to bottom, rgb(5, 128, 139),  #000b0c);  
+   
+}
+
+header h1 {
+    text-align: center;
+    color:rgb(255, 255, 255);
+    padding: 15px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.651);
+}
+
+h2 {
+    color:#ffffff;
+    font-size: 1.8em;
+}
+main {
+   
+    background-image: linear-gradient(to top, rgb(9, 27, 29), rgb(2, 2, 2));
+    background-size: cover;
+    background-attachment: scroll;
+    min-height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+  
+}
+
+.imagem {
+            font-size: 100px;
+            animation: flutuar 3s ease-in-out infinite alternate;
+            margin-top: 20px;
+            
+        }
+
+        
+        @keyframes flutuar {
+
+            from {
+                transform: translateY(0);
+            }
+
+          
+            to {
+                transform: translateY(-25px);
+            }
+        }
+
+section {
+    width: 380px;
+    background-color:#a7e0dd;
+    box-shadow: 2px 2px 2px 5px rgba(2, 26, 46, 0.137);
+    color: rgb(5, 58, 63);
+    border-radius: 5px;
+    font-size: 1.3em;
+    padding: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(5, 58, 63);
+    position: relative;
+    border: none;
+}
+
+section input {
+    width: 50px;
+    height: 20px;
+    border-radius: 2px;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    margin-left: 2px;
+
+    
+}
+section input::-webkit-outer-spin-button,
+section input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+section .barra {
+    background-color:rgb(5, 58, 63);
+    color: #ffffff;
+    margin: 2px;
+    padding: 10px;
+    border-radius: 2px;
+    text-align: start;
+}
+
+
+#botao {
+    
+    background-color: rgb(5, 58, 63);
+    border: 1px solid rgb(5, 58, 63);
+    color: #ffffff;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    font-weight: bolder;
+    transition: 0.3s;
+    
+    
+}
+
+#botao:hover {
+    background-color: #0b524e;
+    transform: scale(1.05);
+}
+
+#res {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgb(199, 242, 243);
+    color: rgb(5, 58, 63);
+    border-radius: 8px;
+    
+}
+
+footer {
+    background-color: #a7e0dd;
+    padding: 8px;
+    text-align: center;
+}

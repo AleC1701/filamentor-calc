@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filamentor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media-queries.css">
+</head>
+<body>
+
+    <header>
+        <h1>Filamentor</h1>
+    </header>
+        
+   <main>
+
+   
+
+     <div class="imagem">
+        
+        <img src="imagens/logo.png">
+       
+     </div>
+
+    
+      
+    <section>
+        
+            <p class="barra">Peso da peça (g):<input type="number" min="0" oninput="this.value = Math.max(0, this.value)" id="pesoKg"></input> <br></p>
+            <p class="barra" >Preço do filamento por kg: <input type="number" min="0"  oninput="this.value = Math.max(0, this.value)" id="precoKg"></input> <br></p>
+            <p class="barra" >Tempo de impressão (h):<input type="number" min="0"  oninput="this.value = Math.max(0, this.value)" id="horas"></input> <br></p>
+            <p class="barra">Preço do kWh:<input type="number" min="0"  oninput="this.value = Math.max(0, this.value)" id="precoKwh"></input> <br></p>
+            <p class="barra" >Lucro:<input type="number" min="0"  oninput="this.value = Math.max(0, this.value)"id="lucro"></input> <br></p>
+            <button id="botao" onclick="calcular()" >Consultar o Filamentor</button>
+            <div id="res">Preencha os dados para calcular.</div>
+        
+
+    </section>
+   </main> 
+
+<script>
+    function calcular() {
+    let pesoKg = document.getElementById('pesoKg')
+    let precoKg = document.getElementById('precoKg')
+    let horas = document.getElementById('horas')
+    let precoKwh = document.getElementById('precoKwh')
+    let lucro = document.getElementById('lucro')
+    let res = document.getElementById('res')
+        
+    if( pesoKg.value.length == 0 ||
+        precoKg.value.length == 0 ||
+        horas.value.length == 0 ||
+        precoKwh.value.length == 0 ||
+        lucro.value.length == 0) {
+        alert('Preencha todos os campos')
+        return
+    }
+
+    let kg = Number(pesoKg.value)
+    let p = Number(precoKg.value)
+    let h = Number(horas.value)
+    let kwh = Number(precoKwh.value)
+    let l = Number(lucro.value)
+
+    let custoFilamento = (p / 1000) * kg
+    let consumo = 0.15
+    let custoEnergia = h* consumo * kwh
+    let custoTotal = custoFilamento + custoEnergia 
+    let precoVenda = custoTotal * (1 + (l / 100))
+
+    res.innerHTML = `
+    
+    
+    Custo do filamento: R$ ${custoFilamento.toFixed(2)} <br>
+
+    Custo da energia: R$ ${custoEnergia.toFixed(2)} <br>
+
+    Custo total: R$ ${custoTotal.toFixed(2)} <br><br>
+
+    <strong>Preço sugerido: R$ ${precoVenda.toFixed(2)}</strong>
+    `
+}
+
+     
+</script>
+
+<footer>Filamentor © 2026 | Desenvolvido por Alessandra</footer>
+
+</body>
+</html>
